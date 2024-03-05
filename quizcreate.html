@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="quizcreate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Create Quiz</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="head_text"> Quiz Website</h1>
+    </div>
+    <hr>
+    <h1 class="text" style="text-align: center;">Select quiz</h1>
+    <div class="select_quiz" id="select_quiz">
+        <h1 style='color:white;text-align: center; margin-top:100px;'>There is no quiz available, please create a quiz
+        </h1>
+    </div>
+    <br>
+    <button class="new_quiz" id="new_quiz" onclick="add()">
+        <h3 class="button_text">Create New quiz</h3>
+    </button>
+    <br>
+    <br>
+    <div class="add_quiz" id="add_quiz">
+        <h2 class="text">Number of MCQs: </h2>
+        <input type="number" class="input" id="n_mcq">
+        <br>
+        <h2 class="text">Number of True or False questions: </h2>
+        <input type="number" class="input" id="n_tf">
+        <br>
+        <h2 class="text">Number of Fill in the blanks qustions: </h2>
+        <input type="number" class="input" id="n_fill">
+        <br>
+        <br>
+        <button class="add_question" onclick="addQuestion()">
+            <h3 class="button_text">Add Questions</h3>
+        </button>
+    </div>
+    <div class="mcq" id="mcq">
+        <h2 class="text">Question</h2>
+        <input type="text" class="inside_input" id="mcq_q">
+        <br>
+        <h2 class="text">Option 1</h2>
+        <input type="text" class="inside_input" id="mcq_o1">
+        <br>
+        <h2 class="text">Option 2</h2>
+        <input type="text" class="inside_input" id="mcq_o2">
+        <br>
+        <h2 class="text">Option 3</h2>
+        <input type="text" class="inside_input" id="mcq_o3">    
+        <h2 class="text">Answer</h2>
+        <input type="text" class="inside_input" id="mcq_a">
+        <br>
+        <br>
+        <br>
+        <button class="add_question" onclick="next()">
+            <h3 class="button_text">Next Questions</h3>
+        </button>
+    </div>
+    <div class="true_false" id="true_false">
+        <h2 class="text">Question</h2>
+        <input type="text" class="inside_input" id="mcq_q" placeholder="True/False">
+        <br>    
+        <h2 class="text">Answer</h2>
+        <input type="text" class="inside_input" id="mcq_a">
+        <br>
+        <br>
+        <br>
+        <button class="add_question" onclick="next()">
+            <h3 class="button_text">Next Questions</h3>
+        </button>
+    </div>
+    <div class="fill" id="fill">
+        <h2 class="text">Question</h2>
+        <input type="text" class="inside_input" id="mcq_q" placeholder="Leave space for blanks or use the '_' character">
+        <br>   
+        <h2 class="text">Answer</h2>
+        <input type="text" class="inside_input" id="mcq_a">
+        <br>
+        <br>
+        <br>
+        <button class="add_question" onclick="next()">
+            <h3 class="button_text">Next Questions</h3>
+        </button>
+    </div>
+    <div class="question_container" id="question_container">
+
+    </div>
+    <script src="quizcreate.js"></script>
+</body>
+
+</html>
