@@ -100,7 +100,7 @@ function displayfill(flength) {
         document.getElementById(div).style.display = "block";
         z++;
     } else {
-        window.alert("punda question over");
+        window.alert("question over");
     }
 }
 
