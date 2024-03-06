@@ -19,14 +19,28 @@
     <div class="select_quiz" id="select_quiz">
         <h1 style='color:white;text-align: center; margin-top:100px;'>There is no quiz available, please create a quiz
         </h1>
+        <div class="quiz" id="quiz">
+            <div class="quiz_name_container" id="quiz_name_container">
+            </div>
+            <div class="button_container">
+                <button class="quiz_button"><h4 class="button_text" onclick="rem()">Delete</h3></button>
+                <button class="quiz_button"><h4 class="button_text">Share</h3></button>
+                <button class="quiz_button"><h4 class="button_text">Results</h3></button>
+            </div>
+        </div>
     </div>
     <br>
+
     <button class="new_quiz" id="new_quiz" onclick="add()">
         <h3 class="button_text">Create New quiz</h3>
     </button>
     <br>
     <br>
     <div class="add_quiz" id="add_quiz">
+        <h2 class="text">Name of the Quiz</h2>
+        <br>
+        <input type="text" class="input" id="n_quiz">
+        <br>
         <h2 class="text">Number of MCQs: </h2>
         <input type="number" class="input" id="n_mcq">
         <br>
@@ -52,7 +66,7 @@
         <input type="text" class="inside_input" id="mcq_o2">
         <br>
         <h2 class="text">Option 3</h2>
-        <input type="text" class="inside_input" id="mcq_o3">    
+        <input type="text" class="inside_input" id="mcq_o3">
         <h2 class="text">Answer</h2>
         <input type="text" class="inside_input" id="mcq_a">
         <br>
@@ -64,10 +78,10 @@
     </div>
     <div class="true_false" id="true_false">
         <h2 class="text">Question</h2>
-        <input type="text" class="inside_input" id="mcq_q" placeholder="True/False">
-        <br>    
+        <input type="text" class="inside_input" id="mcq_q">
+        <br>
         <h2 class="text">Answer</h2>
-        <input type="text" class="inside_input" id="mcq_a">
+        <input type="text" class="inside_input" id="mcq_a" placeholder="True/False">
         <br>
         <br>
         <br>
@@ -77,8 +91,9 @@
     </div>
     <div class="fill" id="fill">
         <h2 class="text">Question</h2>
-        <input type="text" class="inside_input" id="mcq_q" placeholder="Leave space for blanks or use the '_' character">
-        <br>   
+        <input type="text" class="inside_input" id="mcq_q"
+            placeholder="Leave space for blanks or use the '_' character">
+        <br>
         <h2 class="text">Answer</h2>
         <input type="text" class="inside_input" id="mcq_a">
         <br>
