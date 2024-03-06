@@ -5,6 +5,7 @@ var z = 0;
 var mcqlength = 0;
 var tflength = 0;
 var flength = 0;
+var quiz_name = "";
 
 function add() {
     var addQuizElement = document.getElementById("add_quiz");
@@ -13,19 +14,29 @@ function add() {
         document.getElementById("new_quiz").innerHTML = "<h3 style='color:black'>Cancel</h3>"
         document.getElementById("select_quiz").style.display = "none";
         counter = 1;
+        x=y=z=0;
     } else {
         addQuizElement.style.display = "none";
         document.getElementById("new_quiz").innerHTML = "<h3 style='color:black'>Create New quiz</h3>"
         document.getElementById("select_quiz").style.display = "block";
         var mcqElements = document.getElementsByClassName("mcq");
+        var truefalseElements = document.getElementsByClassName("true_false");
+        var fillElements = document.getElementsByClassName("fill");
         for (var i = 0; i < mcqElements.length; i++) {
             mcqElements[i].style.display = "none";
+        }
+        for (var i = 0; i < truefalseElements.length; i++) {
+            truefalseElements[i].style.display = "none";
+        }
+        for (var i = 0; i < fillElements.length; i++) {
+            fillElements[i].style.display = "none";
         }
         counter = 0;
     }
 }
 
 function addQuestion() {
+    quiz_name = document.getElementById("n_quiz").value;
     mcqlength = parseInt(document.getElementById("n_mcq").value);
     tflength = parseInt(document.getElementById("n_tf").value);
     flength = parseInt(document.getElementById("n_fill").value);
@@ -100,10 +111,26 @@ function displayfill(flength) {
         document.getElementById(div).style.display = "block";
         z++;
     } else {
-        window.alert("question over");
+        var dis = document.getElementById("select_quiz");
+        var quiz = document.getElementById("quiz");
+        var name = document.getElementById("quiz_name_container");
+        document.getElementById("new_quiz").innerHTML = "<h3 style='color:black'>Create New quiz</h3>"
+        dis.innerHTML = ""
+        dis.style.display = "block";
+        name.innerHTML = "<h1 class='text'>" + quiz_name + "</h1>";
+        dis.append(quiz);
+        quiz.style.display = "block";
+        counter = 0;
     }
 }
 
 function next() {
     displaymcq(mcqlength);
+}
+
+function rem(){
+    document.getElementById("quiz").remove();
+    counter = 1;
+    document.getElementById("select_quiz").innerHTML = "<h1 style='color:white;text-align: center; margin-top:100px;'>There is no quiz available, please create a quiz</h1>"
+    add();
 }
